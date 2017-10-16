@@ -16,6 +16,8 @@
 
   <link rel="stylesheet" type="text/css"  href="css/form-css/smart-forms.css">
     <link rel="stylesheet" type="text/css"  href="css/form-css/smart-addons.css">
+    <link rel="stylesheet" type="text/css"  href="css/form-css/form-material.css">
+
   <!--[if lte IE 9]>
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
       <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
@@ -64,7 +66,7 @@
     <script type="text/javascript" src="js/additional-methods.min.js"></script>
     <script type="text/javascript" src="js/smartforms-modal.min.js"></script>
     <script type="text/javascript" src="js/dropzone.min.js"></script>
-
+    <script type="text/javascript" src="js/select2.full.min.js"></script>
 
     <script type="text/javascript">
 
@@ -132,6 +134,81 @@
 
 		});
     </script>
+
+
+    <script type="text/javascript">
+    jQuery(document).ready(function($){
+
+      $('.smart-select2').each(function() {
+        $(this).attr('style','width:100%');
+      });
+
+
+      $(".example-disabled").select2();
+      $(".example-basic-single").select2();
+      $(".example-basic-multiple").select2();
+      $(".example-disabled-results").select2();
+      $(".example-basic-hide-search").select2({
+        minimumResultsForSearch: Infinity
+      });
+
+      $(".example-basic-multiple-limit").select2({
+        maximumSelectionLength: 2
+      });
+
+      $(".example-placeholder-single").select2({
+        placeholder: "Select option",
+        allowClear: true
+      });
+
+      $(".example-placeholder-multiple").select2({
+        placeholder: "Select option"
+      });
+
+      $(".example-tags").select2({
+        tags: true
+      });
+
+      $(".example-tokenizer").select2({
+        tags: true,
+        tokenSeparators: [',', ' ']
+      });
+
+      $(".example-rtl").select2({
+        dir: "rtl"
+      });
+
+      $(".example-diacritics").select2();
+
+
+
+      var data = [
+        { id: 0, text: 'enhancement' },
+        { id: 1, text: 'bug' },
+        { id: 2, text: 'duplicate' },
+        { id: 3, text: 'invalid' },
+        { id: 4, text: 'wontfix' }
+      ];
+
+      $(".example-data-array").select2({
+        data: data
+      });
+
+      $(".example-data-array-selected").select2({
+        data: data
+      });
+
+      $(".programmatic-enable").on("click", function () {
+        $(".example-disabled").prop("disabled", false);
+      });
+
+      $(".programmatic-disable").on("click", function () {
+        $(".example-disabled").prop("disabled", true);
+      });
+
+    });
+    </script>
+
     <script type="text/javascript">
     jQuery(document).ready(function($){
       $( "#smart-form" ).validate({
@@ -300,13 +377,9 @@
             <!-- FORM ONE -->
 
             <div class="smart-wrap">
-                <div class="smart-forms">
+                <div class="smart-forms"
 
-                   <div class="form-header header-custom">
-                        <h4><i class="fa fa-comments"></i>Unstyled </h4>
-                    </div><!-- end .form-header section -->
 
-                      <form method="post" action="/" id="contact">
                         <div class="form-body-custom">
 
                             <div class="frm-row">
@@ -341,30 +414,170 @@
                                               <span class="input-hint"> <strong>Hint:</strong> Please enter between 80 - 300 characters.</span>
                                           </label>
                                       </div><!-- end section -->
-
+                                      <div class="section">
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-text2" name="material-text2">
+                                                      <label for="material-text2">Username</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="password" id="material-password2" name="material-password2">
+                                                      <label for="material-password2">Password</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-xs-12">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="email" id="material-email2" name="material-email2">
+                                                      <label for="material-email2">Email</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-xs-6">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-gridf2" name="material-gridf2">
+                                                      <label for="material-gridf2">Grid Input</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-xs-6">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-gridl2" name="material-gridl2">
+                                                      <label for="material-gridl2">Grid Input</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-xs-12">
+                                                  <div class="form-material floating">
+                                                      <textarea class="form-control" id="material-textarea-small2" name="material-textarea-small2" rows="3"></textarea>
+                                                      <label for="material-textarea-small2">Textarea Small</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-xs-12">
+                                                  <div class="form-material floating">
+                                                      <textarea class="form-control" id="material-textarea-large2" name="material-textarea-large2" rows="8"></textarea>
+                                                      <label for="material-textarea-large2">Textarea Large</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material form-material-primary floating">
+                                                      <input class="form-control" type="text" id="material-color-primary2" name="material-color-primary2">
+                                                      <label for="material-color-primary2">Primary Color (On focus)</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material form-material-success floating">
+                                                      <input class="form-control" type="text" id="material-color-success2" name="material-color-success2">
+                                                      <label for="material-color-success2">Success Color (On focus)</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material form-material-info floating">
+                                                      <input class="form-control" type="text" id="material-color-info2" name="material-color-info2">
+                                                      <label for="material-color-info2">Info Color (On focus)</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material form-material-warning floating">
+                                                      <input class="form-control" type="text" id="material-color-warning2" name="material-color-warning2">
+                                                      <label for="material-color-warning2">Warning Color (On focus)</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material form-material-danger floating">
+                                                      <input class="form-control" type="text" id="material-color-danger2" name="material-color-danger2">
+                                                      <label for="material-color-danger2">Danger Color (On focus)</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group has-success">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-success2" name="material-success2">
+                                                      <label for="material-success2">Success</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group has-info">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-info2" name="material-info2">
+                                                      <label for="material-info2">Info</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group has-warning">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-warning2" name="material-warning2">
+                                                      <label for="material-warning2">Warning</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group has-error">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-error2" name="material-error2">
+                                                      <label for="material-error2">Error</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-help2" name="material-help2">
+                                                      <label for="material-help2">With Help</label>
+                                                      <div class="help-block text-right">This is a help block!</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <div class="col-sm-9">
+                                                  <div class="form-material floating">
+                                                      <input class="form-control" type="text" id="material-disabled2" name="material-disabled2" disabled="">
+                                                      <label for="material-disabled2">Disabled</label>
+                                                  </div>
+                                              </div>
+                                          </div>
+<
 
                                   </div><!-- end .colm6 section -->
 
-                                  <div class="colm colm6">
-                                       <div class="map-container">
-                                           <div id="map_canvas"></div>
-                                       </div>
-                                  </div><!-- end .colm6 section -->
-                              </div><!-- end .frm-row section -->
+  </div>
 
-                          </div><!-- end .form-body section -->
-                          <div class="form-footer-custom">
-                            <button type="submit" class="button btn-primary">Submit</button>
-                          </div><!-- end section -->
-                      </form>
 
-                  </div><!-- end .smart-forms section -->
-              </div><!-- end .smart-wrap section -->
-        </div>
+                          <div class="colm colm6">
+                               <div class="map-container">
+                                   <div id="map_canvas"></div>
+                               </div>
+                          </div><!-- end .colm6 section -->
+
+
+
+                    </div> <!--/end section -->
           <a id="tohash" href="#form2"><i class="fa fa-angle-down"></i></a>
       </div>
-
-    </div>
+</div>
+</div>
   </section>  <!--/form1 -->
 
   <section id="form2">
@@ -1205,7 +1418,166 @@
                       </div><!-- end .smart-widget section -->
                   </div><!-- end section -->
 
+                  <div class="spacer-t40 spacer-b30">
+                      <div class="tagline"><span> Jquery Select 2 </span></div><!-- .tagline -->
+                  </div>
 
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-basic-single smart-select2">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-basic-multiple smart-select2" multiple="multiple">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                        <select class="example-data-array smart-select2"></select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-data-array-selected smart-select2">
+                  <option value="2" selected="selected">duplicate</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-disabled-results smart-select2">
+                              <option value="one">First</option>
+                              <option value="two" disabled="disabled">Second (disabled)</option>
+                              <option value="three">Third</option>
+                              <option value="four" disabled="disabled">Fourth (disabled)</option>
+                              <option value="five" disabled="disabled">Fifth (disabled)</option>
+                              <option value="six">Sixth</option>
+                              <option value="seven">Seventh</option>
+                              <option value="eight">Eighth</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-basic-hide-search smart-select2">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-basic-multiple-limit smart-select2" multiple="multiple">
+                              <option value="1">Arua</option>
+                              <option value="2">Amuria</option>
+                              <option value="3">Bukedia</option>
+                              <option value="4">Bushenyi</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-placeholder-single smart-select2">
+                              <option value=""></option>
+                              <option value="2">Amuria</option>
+                              <option value="3">Bukedia</option>
+                              <option value="4">Bushenyi</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-placeholder-multiple smart-select2" multiple="multiple">
+                              <option value="1">Arua</option>
+                              <option value="2">Amuria</option>
+                              <option value="3">Bukedia</option>
+                              <option value="4">Bushenyi</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-tags smart-select2" multiple="multiple">
+                              <option selected="selected" value="1">Arua</option>
+                              <option value="2">Amuria</option>
+                              <option selected="selected" value="3">Bukedia</option>
+                              <option value="4">Bushenyi</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                          <select class="example-tokenizer smart-select2" multiple="multiple">
+                              <option>Red</option>
+                              <option>Blue</option>
+                              <option>Green</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                  <select class="example-rtl smart-select2"  dir="rtl">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                  <select class="example-diacritics smart-select2">
+                              <option>AerÃ³bics</option>
+                              <option>AerÃ³bics en Agua</option>
+                              <option>AerografÃ­a</option>
+                              <option>Aeromodelaje</option>
+                              <option>Ãguilas</option>
+                              <option>Ajedrez</option>
+                              <option>Ala Delta</option>
+                              <option>Ãlbumes de MÃºsica</option>
+                              <option>Alusivos</option>
+                              <option>AnÃ¡lisis de Escritura a Mano</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                  <select class="example-disabled smart-select2" disabled="disabled">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <div class="section">
+                      <label class="field">
+                  <select class="example-disabled smart-select2" multiple="multiple" disabled="disabled">
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                      </label>
+                  </div><!-- end section -->
+
+                  <button type="button" class="programmatic-enable button"> Enable </button>
+                  <button type="button" class="programmatic-disable button"> Disable </button>
                   <div class="spacer-t40 spacer-b30">
                     <div class="tagline"><span> Block  Options </span></div><!-- .tagline -->
                   </div>
