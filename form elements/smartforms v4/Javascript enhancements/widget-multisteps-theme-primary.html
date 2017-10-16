@@ -4,23 +4,23 @@
   	<title> Smart forms - multi-steps form </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" type="text/css"  href="css/smart-forms.css">
     <link rel="stylesheet" type="text/css"  href="css/smart-addons.css">
     <link rel="stylesheet" type="text/css"  href="css/font-awesome.min.css">
-
+ 
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.steps.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-custom.min.js"></script>    
     <script type="text/javascript" src="js/jquery-ui-slider-pips.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-touch-punch.min.js"></script>
-    <script type="text/javascript" src="js/jquery.formShowHide.min.js"></script>
+    <script type="text/javascript" src="js/jquery.formShowHide.min.js"></script>    
 
     <script type="text/javascript">
-
+	
 		jQuery(document).ready(function($){
 			/* Form Steps
-			----------------------------------------------- */
+			----------------------------------------------- */		
 			$("#smart-form").steps({
 				headerTag: "h2",
 				bodyTag: "fieldset",
@@ -30,12 +30,12 @@
 					finish: "Submit Form",
 					next: "Continue",
 					previous: "Go Back",
-					loading: "Loading..."
-				}
-			});
-
+					loading: "Loading..." 
+				}				
+			});	
+				
 			/* Project datepicker range
-			----------------------------------------------- */
+			----------------------------------------------- */			
 			$("#start_date").datepicker({
 				defaultDate: "+1w",
 				changeMonth: false,
@@ -46,19 +46,19 @@
 					$( "#end_date" ).datepicker( "option", "minDate", selectedDate );
 				}
 			});
-
+			
 			$("#end_date").datepicker({
 				defaultDate: "+1w",
 				changeMonth: false,
 				numberOfMonths: 1,
 				prevText: '<i class="fa fa-chevron-left"></i>',
-				nextText: '<i class="fa fa-chevron-right"></i>',
+				nextText: '<i class="fa fa-chevron-right"></i>',			
 				onClose: function( selectedDate ) {
 					$( "#start_date" ).datepicker( "option", "maxDate", selectedDate );
 				}
 			});
-
-			/* The budget slider
+			
+			/* The budget slider 
 			------------------------------------------------------ */
 			$( "#budget_slider" ).slider({
 				range: "min",
@@ -71,194 +71,194 @@
 					$("#budget").val("$" + ui.value);
 				}
 			});
-
+						
 			$("#budget").val( "$" + $("#budget_slider").slider("value"));
 			$("#budget_slider").slider("pips", { rest: "label", prefix: "$", suffix: "" });
 			$("#budget_slider").slider("float", { prefix: "$", suffix: "", pips: true });
-
+			
 			/* Show hide payment options
 			------------------------------------------------------- */
 			$('.smartfm-ctrl').formShowHide();
-
-		});
-    </script>
-
+					
+		});    
+    </script>     
+    
 
     <!--[if lte IE 9]>
         <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-    <![endif]-->
-
+    <![endif]-->    
+    
     <!--[if lte IE 8]>
         <link type="text/css" rel="stylesheet" href="css/smart-forms-ie8.css">
     <![endif]-->
-
-
+       
+       
 </head>
 
 <body class="woodbg">
 
 	<div class="smart-wrap">
     	<div class="smart-forms smart-container wrap-1">
-
+        
             	<div class="form-body steps-theme-primary">
                  <form method="post" action="php/formprocess.php" id="smart-form">
                             <h2>Your Details</h2>
                             <fieldset>
-
+                            
                                 <div class="frm-row">
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="First name">
-                                            <span class="field-icon"><i class="fa fa-user"></i></span>
+                                            <span class="field-icon"><i class="fa fa-user"></i></span>  
                                         </label>
                                     </div><!-- end section -->
-
+                                    
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="lastname" id="lastname" class="gui-input" placeholder="Last name">
-                                            <span class="field-icon"><i class="fa fa-user"></i></span>
+                                            <span class="field-icon"><i class="fa fa-user"></i></span>  
                                         </label>
                                     </div><!-- end section -->
                                 </div><!-- end .frm-row section -->
-
+                                
                                 <div class="frm-row">
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="email" name="emailaddress" id="emailaddress" class="gui-input" placeholder="Email address">
-                                            <span class="field-icon"><i class="fa fa-envelope"></i></span>
+                                            <span class="field-icon"><i class="fa fa-envelope"></i></span>  
                                         </label>
                                     </div><!-- end section -->
-
+                                    
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="tel" name="telephone" id="telephone" class="gui-input" placeholder="Telephone number">
-                                            <span class="field-icon"><i class="fa fa-phone-square"></i></span>
+                                            <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
                                         </label>
                                     </div><!-- end section -->
                                 </div><!-- end .frm-row section -->
-
+                                
                                 <div class="section">
                                     <label class="field prepend-icon">
                                         <textarea class="gui-textarea" id="selfdetails" name="selfdetails" placeholder="More personal details"></textarea>
                                         <span class="field-icon"><i class="fa fa-comments"></i></span>
-                                        <span class="input-hint">
+                                        <span class="input-hint"> 
                                             <strong>More Details:</strong> add more specific details about yourself
-                                        </span>
+                                        </span>   
                                     </label>
-                                </div><!-- end section -->
+                                </div><!-- end section -->                                                                 
 
                             </fieldset>
-
+            
                             <h2>Project Details</h2>
                             <fieldset>
-
+                            
                                 <div class="frm-row">
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="project_title" id="project_title" class="gui-input" placeholder="Project title">
-                                            <span class="field-icon"><i class="fa fa-line-chart"></i></span>
+                                            <span class="field-icon"><i class="fa fa-line-chart"></i></span>  
                                         </label>
                                     </div><!-- end section -->
-
+                                	
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="contact_person" id="contact_person" class="gui-input" placeholder="Contact person">
-                                            <span class="field-icon"><i class="fa fa-male"></i></span>
+                                            <span class="field-icon"><i class="fa fa-male"></i></span>  
                                         </label>
-                                    </div><!-- end section -->
+                                    </div><!-- end section -->               
                                 </div><!-- end frm-row section -->
-
+                                
                                 <div class="frm-row">
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="start_date" id="start_date" class="gui-input" placeholder="Project start date">
-                                            <span class="field-icon"><i class="fa fa-calendar"></i></span>
+                                            <span class="field-icon"><i class="fa fa-calendar"></i></span>  
                                         </label>
                                     </div><!-- end section -->
-
+                                	
                                     <div class="section colm colm6">
                                         <label class="field prepend-icon">
                                             <input type="text" name="end_date" id="end_date" class="gui-input" placeholder="Project end date">
-                                            <span class="field-icon"><i class="fa fa-calendar-o"></i></span>
+                                            <span class="field-icon"><i class="fa fa-calendar-o"></i></span>  
                                         </label>
-                                    </div><!-- end section -->
+                                    </div><!-- end section -->               
                                 </div><!-- end frm-row section -->
-
+                                
                                 <div class="section spacer-b40">
                                     <div class="spacer-b15">
                                         <label for="amount">Project Budget:</label>
-                                        <input type="text" id="budget" class="slider-input">
-                                    </div><!-- end .spacer -->
+                                        <input type="text" id="budget" class="slider-input"> 
+                                    </div><!-- end .spacer -->                   
                                     <div class="slider-wrapper">
                                         <div id="budget_slider"></div>
                                     </div><!-- end .slider-wrapper -->
-                                </div><!-- end section -->
-
+                                </div><!-- end section --> 
+                                
                                 <div class="section">
                                     <label class="field prepend-icon">
                                         <textarea class="gui-textarea" id="projectdetails" name="projectdetails" placeholder="Project details"></textarea>
                                         <span class="field-icon"><i class="fa fa-comments"></i></span>
-                                        <span class="input-hint">
+                                        <span class="input-hint"> 
                                             <strong>Project Details:</strong> add more project specific details
-                                        </span>
+                                        </span>   
                                     </label>
-                                </div><!-- end section -->
-
+                                </div><!-- end section -->                                                                                               
+                                
                             </fieldset>
-
+                            
                             <h2>Payments</h2>
                             <fieldset>
-
+                            
                                 <div class="section">
                                     <p class="small-text fine-grey">Please choose a preferred method of payment below </p>
                                 </div><!-- end section -->
-
+                                
                                 <div class="section">
                                 	<div class="option-group field">
                                         <label class="option">
                                             <input type="radio" name="payment" value="Visa" class="smartfm-ctrl" data-show-id="ctr_visa" checked>
-                                            <span class="radio"></span>
-                                            <i class="fa fa-credit-card"></i> Visa
+                                            <span class="radio"></span> 
+                                            <i class="fa fa-credit-card"></i> Visa                 
                                         </label>
                                         <label class="option">
                                             <input type="radio" name="payment" value="Master Card" class="smartfm-ctrl" data-show-id="ctr_mastercard">
-                                            <span class="radio"></span>
-                                            <i class="fa fa-credit-card"></i> Master Card
+                                            <span class="radio"></span> 
+                                            <i class="fa fa-credit-card"></i> Master Card                  
                                         </label>
                                         <label class="option">
                                             <input type="radio" name="payment" id="ppal" value="Pay Pal" class="smartfm-ctrl" data-show-id="ctr_paypal">
-                                            <span class="radio"></span>
-                                            <i class="fa fa-paypal"></i> Paypal Credit
-                                        </label>
+                                            <span class="radio"></span> 
+                                            <i class="fa fa-paypal"></i> Paypal Credit               
+                                        </label>                                                                   
                                     </div>
                                 </div><!-- end section -->
-
+                                
                                 <div id="ctr_visa" class="hiddenbox">
-
+                                
                                     <div class="frm-row">
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="visaCardName" id="visaCardName" class="gui-input" placeholder="Visa card name">
-                                                <span class="field-icon"><i class="fa fa-user"></i></span>
+                                                <span class="field-icon"><i class="fa fa-user"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="visaCardNumber" id="visaCardNumber" class="gui-input" placeholder="Visa card number">
-                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>
+                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>   
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="visaCardCCV" id="visaCardCVV" class="gui-input" placeholder="Card Verification Value">
                                                 <b class="tooltip tip-left-top"><em> This is a 3 digit number on the back of your credit and debit cards. </em></b>
-                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>
+                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>   
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                     <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field select">
@@ -277,10 +277,10 @@
                                                     <option value="11">11 - Nov</option>
                                                     <option value="12">12 - Dec</option>
                                                 </select>
-                                                <i class="arrow double"></i>
+                                                <i class="arrow double"></i>                             
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field select">
                                               <select id="visaCardYear" name="visaCardYear">
@@ -299,37 +299,37 @@
                                                   <option value="2025">2025</option>
                                                   <option value="2026">2026</option>
                                               </select>
-                                              <i class="arrow double"></i>
+                                              <i class="arrow double"></i>                   
                                             </label>
-                                        </div><!-- end section -->
+                                        </div><!-- end section -->                
                                     </div><!-- end frm-row section -->
                                 </div><!-- end payment section -->
-
+                                
                                 <div id="ctr_mastercard" class="hiddenbox">
                                    <div class="frm-row">
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="masterCardName" id="masterCardName" class="gui-input" placeholder="Mastercard name">
-                                                <span class="field-icon"><i class="fa fa-user"></i></span>
+                                                <span class="field-icon"><i class="fa fa-user"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="masterCardNumber" id="masterCardNumber" class="gui-input" placeholder="Mastercard number">
-                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>
+                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>   
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="masterCardCCV" id="masterCardCVV" class="gui-input" placeholder="Card Verification Value">
                                                 <b class="tooltip tip-left-top"><em> This is a 3 digit number on the back of your credit and debit cards. </em></b>
-                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>
+                                                <span class="field-icon"><i class="fa fa-credit-card"></i></span>   
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                     <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field select">
@@ -348,10 +348,10 @@
                                                     <option value="11">11 - Nov</option>
                                                     <option value="12">12 - Dec</option>
                                                 </select>
-                                                <i class="arrow double"></i>
+                                                <i class="arrow double"></i>                             
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field select">
                                               <select id="masterCardYear" name="masterCardYear">
@@ -370,61 +370,61 @@
                                                   <option value="2025">2025</option>
                                                   <option value="2026">2026</option>
                                               </select>
-                                              <i class="arrow double"></i>
+                                              <i class="arrow double"></i>                   
                                             </label>
-                                        </div><!-- end section -->
+                                        </div><!-- end section -->                
                                     </div><!-- end frm-row section -->
                                 </div><!-- end payment section -->
-
+                                
                                 <div id="ctr_paypal" class="hiddenbox">
                                    <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppName" id="ppName" class="gui-input" placeholder="First name">
-                                                <span class="field-icon"><i class="fa fa-user"></i></span>
+                                                <span class="field-icon"><i class="fa fa-user"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppName2" id="ppName2" class="gui-input" placeholder="Last name">
-                                                <span class="field-icon"><i class="fa fa-user"></i></span>
+                                                <span class="field-icon"><i class="fa fa-user"></i></span>   
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                    <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppAddress1" id="ppAddress1" class="gui-input" placeholder="Address line 1">
-                                                <span class="field-icon"><i class="fa fa-map-marker"></i></span>
+                                                <span class="field-icon"><i class="fa fa-map-marker"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppAddress1" id="ppAddress2" class="gui-input" placeholder="Address line 2">
-                                                <span class="field-icon"><i class="fa fa-map-marker"></i></span>
+                                                <span class="field-icon"><i class="fa fa-map-marker"></i></span>  
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                    <div class="frm-row">
-
+                                   
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppCity" id="ppCity" class="gui-input" placeholder="City">
-                                                <span class="field-icon"><i class="fa fa-building"></i></span>
+                                                <span class="field-icon"><i class="fa fa-building"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm4">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppZip" id="ppZip" class="gui-input" placeholder="Zip">
-                                                <span class="field-icon"><i class="fa fa-lock"></i></span>
+                                                <span class="field-icon"><i class="fa fa-lock"></i></span>  
                                             </label>
-                                        </div><!-- end section -->
-
+                                        </div><!-- end section -->                                        
+                                        
                                         <div class="section colm colm4">
                                             <label class="field select">
                                                 <select id="ppState" name="ppState">
@@ -482,55 +482,55 @@
                                                     <option value="WY">Wyoming</option>
                                                 </select>
                                                 <i class="arrow double"></i>
-                                            </label>
+                                            </label> 
                                         </div><!-- end section -->
-                                    </div><!-- end frm-row section -->
-
+                                    </div><!-- end frm-row section -->                                      
+                                                                       
                                    <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppPhone" id="ppPhone" class="gui-input" placeholder="Phone number">
-                                                <span class="field-icon"><i class="fa fa-phone-square"></i></span>
+                                                <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="text" name="ppEmail" id="ppEmail" class="gui-input" placeholder="Email">
-                                                <span class="field-icon"><i class="fa fa-envelope"></i></span>
+                                                <span class="field-icon"><i class="fa fa-envelope"></i></span>   
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                    <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="password" name="ppPass" id="ppPass" class="gui-input" placeholder="Choose a PayPal password">
-                                                <span class="field-icon"><i class="fa fa-lock"></i></span>
+                                                <span class="field-icon"><i class="fa fa-lock"></i></span>  
                                             </label>
                                         </div><!-- end section -->
-
+                                        
                                         <div class="section colm colm6">
                                             <label class="field prepend-icon">
                                                 <input type="password" name="ppPass2" id="ppPass2" class="gui-input" placeholder="Re-enter password">
-                                                <span class="field-icon"><i class="fa fa-lock"></i></span>
+                                                <span class="field-icon"><i class="fa fa-lock"></i></span>   
                                             </label>
                                         </div><!-- end section -->
                                     </div><!-- end frm-row section -->
-
+                                    
                                     <div class="section">
                                         <div class="option-group field">
                                             <label class="option">
                                                 <input type="checkbox" name="ppTerms" value="Paypal Tems">
-                                                <span class="checkbox"></span>
-                                                Yes, I've read and agree to the terms
+                                                <span class="checkbox"></span> 
+                                                Yes, I've read and agree to the terms                
                                             </label>
                                         </div>
-                                    </div><!-- end section -->
-
+                                    </div><!-- end section -->                                     
+                                    
                                 </div><!-- end payment section -->
-                            </fieldset>
-
+                            </fieldset>                            
+                            
                             <h2>Complete</h2>
                             <fieldset>
                                 <div class="section">
@@ -538,27 +538,27 @@
                                     	<p>Plese cross check your information before submitting this order</p>
                                     </div>
                                 </div><!-- end section -->
-
+                                
                                 <div class="section">
-
+                                
                                     <div class="section">
                                         <div class="option-group field">
                                             <label class="option">
                                                 <input type="checkbox" name="generalTerms" value="General Terms">
-                                                <span class="checkbox"></span>
-                                                Please <a href="#" class="smart-link"> read and agree </a> to our the terms
+                                                <span class="checkbox"></span> 
+                                                Please <a href="#" class="smart-link"> read and agree </a> to our the terms                
                                             </label>
                                         </div>
-                                    </div><!-- end section -->
-
+                                    </div><!-- end section -->                                 
+                                	
                                 </div><!-- end section -->
-
+                                    
                                 <div class="result"></div>
-
+                                
                             </fieldset>
-                    </form>
+                    </form>                                                                                   
                 </div><!-- end .form-body section -->
-
+            
         </div><!-- end .smart-forms section -->
     </div><!-- end .smart-wrap section -->
 

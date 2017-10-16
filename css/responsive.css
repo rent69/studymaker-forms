@@ -113,10 +113,10 @@
 		text-align: center;
 		margin-bottom: 50px;
 	}
-	.team-member {
+	.patient {
 		margin-bottom: 50px;
 	}
-	.team-members .col-sm-3, 
+	.patients .col-sm-3, 
 	.pricing-table .col-sm-3, 
 	#portfolio .col-sm-3, 
 	.blog-posts .col-sm-4  {
@@ -218,7 +218,7 @@
 /* XS Portrait */
 @media (max-width: 479px) {
   
-	.team-members .col-sm-3, 
+	.patients .col-sm-3, 
 	.pricing-table .col-sm-3, 
 	#portfolio .col-sm-3, 
 	.blog-posts .col-sm-4 {
